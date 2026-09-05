@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- KESALAHAN 1 : Sebelumnya tidak ada tag metadata wajib HTML5 -->
+    <!-- Tanpa ini, halaman web tidak responsif di HP dan karakter khusus bisa rusak -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- KESALAHAN 2 : Sebelumnya ditulis <h1>Profil Saya<h1> -->
+    <!-- Tag penutup salah karena tidak menggunakan garis miring (/), sudah diperbaiki menjadi </h1> -->
+    <h1>Profil Saya</h1>
+    
+    <p>Nama saya adalah Budi</p>
+    
+    <ul>
+        <!-- KESALAHAN 3 : Sebelumnya elemen list Programing,Gaming,Music tidak memiliki tag penutup </li> -->
+        <!-- Menurut standar W3C, setiap tag <li> wajib ditutup -->
+        <li>Programming</li>
+        <li>Gaming</li>
+        <li>Music</li>
+    </ul>
+</body>
+</html>
