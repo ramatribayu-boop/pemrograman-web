@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Form</title>
+</head>
+<body>
+
+    <form method="post" enctype="multipart/form-data">
+        <table border="1" align="center" cellpadding="5" cellspacing="0">
+            <thead>
+                <tr>
+                    <th colspan="3">Form Input Mahasiswa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>NIM</td>
+                    <td>:</td>
+                    <td><input type="number" name="nim" id="nim" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nama</td>
+                    <td>:</td>
+                    <td><input type="text" name="nama" id="nama" required>
+                    </td>
+                </tr>
+                <tr>
+                   <td>Jenis Kelamin</td>
+                    <td>:</td>
+                    <td>
+                        <input type="radio" name="jk" id="jk" value="Laki-laki"> Laki-laki
+                        <input type="radio" name="jk" id="jk" value="Perempuan"> Perempuan
+                    </td>
+                </tr>
+                <tr>
+                    <td>Program Studi</td>
+                    <td>:</td>
+                    <td>
+                        <select name="prodi" id="prodi">
+                            <option value="" selected disabled>Pilih Program Studi</option>
+                            <option value="Teknik Informatika"> Teknik Informatika
+                            <option value="Sistem Informasi"> Sistem Informasi
+                            <option value="Teknik Komputer"> Teknik Komputer
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>:</td>
+                    <td><input type="email" name="email" id="email" required></td>
+                </tr>
+                <tr>
+                    <td>Nomor Telepon</td>
+                    <td>:</td>
+                    <td><input type="tel" name="telepon" id="telepon" required></td>
+                </tr>
+                <tr>
+                    <td>Alamat</td>
+                    <td>:</td>
+                    <td>
+                        <textarea name="alamat" id="alamat" rows="3" cols="22" required></textarea>
+                    </td>
+                </tr>
+                <td colspan="3" align= "center">
+                    <input type="submit" name="submit"  value="Simpan">
+                    <input type="reset" name="reset" value="Reset">
+                </td>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>
