@@ -1,0 +1,587 @@
+/* --- CSS UNTUK TAMPILAN WEBSITE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigasi / Header */
+/* Navigasi / Header */
+header {
+    background-color: #1a252f; /* Mengembalikan ke warna gelap agar logo toska/biru terlihat kontras */
+    border-bottom: none;
+    padding: 10px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 32px; /* Ukuran pas untuk logo horizontal Portfolio+ */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Mengatur warna teks menu navigasi agar kembali putih bersih */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* KODE BARU: Mengatur warna menu ketika dalam keadaan aktif dipilih */
+nav ul li a.active {
+    color: #1abc9c; /* Warna hijau toska saat menu aktif terpilih */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+}
+
+
+
+/* --- TATA LETAK BARU HERO SECTION --- */
+/* --- TATA LETAK MODERN HERO SECTION --- */
+.hero {
+    background: linear-gradient(135deg, #1e293b, #1abc9c); /* Mengubah sedikit ke slate-dark agar teks lebih menyala */
+    color: white;
+    padding: 100px 10%;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Memotong lingkaran dekoratif agar tidak keluar jalur */
+}
+
+/* Elemen Dekorasi Lingkaran Latar Belakang */
+.hero-bg-circle-1 {
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+}
+
+.hero-bg-circle-2 {
+    position: absolute;
+    bottom: -10%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: rgba(26, 188, 156, 0.1);
+    border-radius: 50%;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    z-index: 2; /* Menjaga teks tetap di atas lingkaran dekoratif */
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-img {
+    width: 260px;            
+    height: 350px;           
+    object-fit: cover;       
+    border: 6px solid rgba(255, 255, 255, 0.2); /* Bingkai semi transparan lebih modern */
+    border-radius: 12px;      
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25); 
+}
+
+.hero-right {
+    flex: 1.5;
+}
+
+/* Badge Gaya Desain Terbaru */
+.hero-badge {
+    display: inline-block;
+    background-color: rgba(26, 188, 156, 0.2);
+    color: #2ecc71;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(26, 188, 156, 0.3);
+}
+
+.hero-right h1 {
+    font-size: 40px;
+    line-height: 1.25;
+    margin-bottom: 15px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.name-highlight {
+    color: #e1e108; /* Memberikan warna toska khusus pada nama Anda */
+}
+
+.hero-right p {
+    font-size: 18px;
+    opacity: 0.85;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Desain Tombol Aksi */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-hero-primary {
+    background-color: #1abc9c;
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(26, 188, 156, 0.3);
+}
+
+.btn-hero-primary:hover {
+    background-color: #16a085;
+    transform: translateY(-2px);
+}
+
+.btn-hero-secondary {
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-hero-secondary:hover {
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVE: Fleksibel saat dibuka di layar smartphone */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 5%;
+    }
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .hero-left {
+        justify-content: center;
+    }
+    .profile-img {
+        width: 200px;
+        height: 270px;
+    }
+    .hero-right h1 {
+        font-size: 30px;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+}
+
+/* Wadah utama pembagi kiri dan kanan */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px; /* Jarak antara foto dan teks */
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left; /* Membuat tulisan rata kiri */
+}
+
+/* Sisi Kiri (Foto) */
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-img {
+    width: 280px;            
+    height: 380px;           
+    object-fit: cover;       
+    border: 5px solid #fff;  
+    border-radius: 8px;      
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
+}
+
+/* Sisi Kanan (Teks) */
+.hero-right {
+    flex: 1.5;
+}
+
+.hero-right h1 {
+    font-size: 38px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-right p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* RESPONSIVE: Otomatis kembali vertikal jika dibuka di HP */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-left {
+        justify-content: center;
+    }
+    .hero-right h1 {
+        font-size: 28px;
+    }
+}
+
+
+/* Pengaturan Konten Umum */
+section {
+    padding: 70px 10%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 30px;
+    color: #2c3e50;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #1abc9c;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Bagian Tentang Saya */
+.about-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Bagian Proyek / Karya */
+/* --- TATA LETAK GRID KARTU PROYEK TERBARU --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden; /* Memastikan pojok gambar ikut melengkung sesuai kartu */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Pembungkus gambar agar tingginya seragam dan konsisten */
+.project-img-wrapper {
+    width: 100%;
+    height: 180px; 
+    overflow: hidden;
+    background-color: #eaedf0;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menjaga gambar tetap proporsional tanpa distorsi tegang */
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05); /* Efek zoom-in halus pada gambar saat kartu di-hover */
+}
+
+/* Kotak teks di dalam kartu */
+.project-info-box {
+    padding: 20px;
+    text-align: left;
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.project-card p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* Bagian Kontak */
+.contact-info {
+    text-align: center;
+    font-size: 18px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #1a252f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* --- TATA LETAK GRID UNTUK KOTAK KEAHLIAN --- */
+.skills-container {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.skills-container h3 {
+    font-size: 22px;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* --- KEMBALI KE TATA LETAK GRID AWAL --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.skill-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 25px 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    /* Menghapus flex-basis agar kartu bisa melebar otomatis mengikuti grid */
+    width: 100%; 
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #1abc9c;
+}
+
+
+.skill-icon {
+    font-size: 36px;       /* Mengatur ukuran logo/ikon teknologi */
+    color: #1abc9c;        /* Warna hijau toska sesuai tema */
+    margin-bottom: 15px;   /* Jarak antara logo dan judul keahlian */
+    display: inline-block;
+}
+
+
+.skill-card h4 {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.skill-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+/* Mengatur ukuran gambar logo lokal di keahlian inti */
+.skill-logo {
+    width: 45px;            /* Mengatur lebar logo */
+    height: 45px;           /* Mengatur tinggi logo */
+    object-fit: contain;    /* Memastikan gambar logo tidak penyok/terdistorsi */
+    margin-bottom: 10px;    /* Jarak antara logo dengan teks judul */
+}
+
+/* --- DESAIN BAGIAN KONTAK TERBARU --- */
+.contact-subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-buttons-box, .contact-form-box {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-wrapper h3 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.contact-wrapper h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 3px;
+    background-color: #1abc9c;
+    border-radius: 2px;
+}
+
+/* Pengaturan Tombol Kontak */
+.btn-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 15px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: #f8fafc;
+}
+
+.contact-logo-img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* Pengaturan Formulir Pesan */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f8fafc;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #1abc9c;
+    background-color: #fff;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #16a085;
+    transform: translateY(-2px);
+}
