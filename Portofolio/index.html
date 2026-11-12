@@ -1,61 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head><!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Personal Saya</title>
-    <!-- Baris di bawah ini berfungsi menghubungkan HTML ke file style.css -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Pemanggilan Animasi AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com" />
+
 </head>
 <body>
 
     <!-- NAVIGASI -->
-     <!-- NAVIGASI (Pastikan strukturnya seperti ini) -->
     <header>
         <div class="logo">
             <img src="Foto/logo-removebg-preview (1).png" alt="Logo Portofolio">
         </div>
         <nav>
             <ul>
-                <!-- Tambahkan class="active" pada Beranda secara default -->
                 <li><a href="#home" class="active">Beranda</a></li>
                 <li><a href="#about">Tentang</a></li>
                 <li><a href="#projects">Proyek</a></li>
+                <li><a href="#certificates">Sertifikat</a></li>
                 <li><a href="#contact">Kontak</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- ... KONTEN SECTIONS LAINNYA ... -->
-
-    <!-- TAMBAHKAN SCRIPT JAVASCRIPT INI DI PALING BAWAH SEBELUM BROWSER MENUTUP TAG BODY -->
-    <script>
-        // Mengambil semua elemen tautan menu navigasi
-        const menuItems = document.querySelectorAll('nav ul li a');
-
-        menuItems.forEach(item => {
-            item.addEventListener('click', function() {
-                // Menghapus kelas 'active' dari semua menu
-                menuItems.forEach(menu => menu.classList.remove('active'));
-                
-                // Menambahkan kelas 'active' ke menu yang baru saja diklik
-                this.classList.add('active');
-            });
-        });
-    </script>
-</body>
-</html>
-
     <!-- BANNER UTAMA (HERO) -->
-         <!-- BANNER UTAMA (HERO) -->
     <section id="home" class="hero">
-        <!-- Elemen dekoratif latar belakang agar tidak polos -->
         <div class="hero-bg-circle-1"></div>
         <div class="hero-bg-circle-2"></div>
 
@@ -64,12 +38,9 @@
                 <img src="Foto/3x4_foto-biru.png" alt="Foto Rama" class="profile-img">
             </div>
             <div class="hero-right">
-                <!-- Badge Modern -->
                 <span class="hero-badge">👋 Salam Kenal</span>
                 <h1>Halo, Nama saya <span class="name-highlight">Rama Tribayu Pamungkas</span></h1>
                 <p>Mahasiswa Politeknik Negeri Medan Jurusan Manajemen Informatika</p>
-                
-                <!-- Tombol Interaktif Baru -->
                 <div class="hero-buttons">
                     <a href="#projects" class="btn-hero-primary">Lihat Proyek</a>
                     <a href="#contact" class="btn-hero-secondary">Hubungi Saya</a>
@@ -78,11 +49,8 @@
         </div>
     </section>
 
-
     <!-- TENTANG SAYA -->
-        <!-- TENTANG SAYA -->
-        <!-- TENTANG SAYA -->
-    <section id="about">
+    <section id="about" class="scroll-anim fade-up-anim">
         <h2>Tentang Saya</h2>
         <div class="about-content">
             <p>
@@ -92,62 +60,53 @@
                 Selama masa studi, saya aktif mengembangkan berbagai aplikasi web, games, merancang arsitektur basis data, serta berkolaborasi dalam tim untuk membangun sistem. Saya senang memecahkan masalah melalui kode dan terus mempelajari teknologi baru untuk menghadirkan solusi digital yang efisien.
             </p>
             
-            <!-- UBAH BAGIAN INI: Menggunakan model Grid Card mirip proyek -->
             <div class="skills-container">
                 <h3>Keahlian Inti</h3>
                 <div class="skills-grid">
-    
-    <!-- Kotak Keahlian 1 -->
-    <div class="skill-card">
-        <div class="skill-icon">
-            <!-- Panggil dari folder logo -->
-            <img src="Logo/square-web-awesome-brands-solid-full.svg" alt="Logo Web" class="skill-logo">
-        </div>
-        <h4>Web & Software Development</h4>
-        <p>Pengembangan aplikasi perangkat lunak dan antarmuka web yang fungsional.</p>
-    </div>
+                    <div class="skill-card scroll-anim fade-up-anim">
+                        <div class="skill-icon">
+                            <img src="Logo/square-web-awesome-brands-solid-full.svg" alt="Logo Web" class="skill-logo">
+                        </div>
+                        <h4>Web & Software Development</h4>
+                        <p>Pengembangan aplikasi perangkat lunak dan antarmuka web yang fungsional.</p>
+                    </div>
 
-    <!-- Kotak Keahlian 2 -->
-    <div class="skill-card">
-        <div class="skill-icon">
-            <img src="Logo/database-solid-full.svg" alt="Logo Database" class="skill-logo">
-        </div>
-        <h4>Database Management</h4>
-        <p>Merancang struktur, relasi, dan mengelola basis data menggunakan SQL / phpMyAdmin.</p>
-    </div>
+                    <div class="skill-card scroll-anim fade-up-anim">
+                        <div class="skill-icon">
+                            <img src="Logo/database-solid-full.svg" alt="Logo Database" class="skill-logo">
+                        </div>
+                        <h4>Database Management</h4>
+                        <p>Merancang struktur, relasi, dan mengelola basis data menggunakan SQL / phpMyAdmin.</p>
+                    </div>
 
-    <!-- Kotak Keahlian 3 -->
-    <div class="skill-card">
-        <div class="skill-icon">
-            <img src="Logo/java-brands-solid-full.svg" alt="Logo Java" class="skill-logo">
-        </div>
-        <h4>Java Programming</h4>
-        <p>Penerapan konsep pemrograman berorientasi objek (OOP) dalam pengembangan aplikasi desktop dan mobile.</p>
-    </div>
+                    <div class="skill-card scroll-anim fade-up-anim">
+                        <div class="skill-icon">
+                            <img src="Logo/java-brands-solid-full.svg" alt="Logo Java" class="skill-logo">
+                        </div>
+                        <h4>Java Programming</h4>
+                        <p>Penerapan konsep pemrograman berorientasi objek (OOP) dalam pengembangan aplikasi desktop dan mobile.</p>
+                    </div>
 
-    <!-- Kotak Keahlian 4 -->
-    <div class="skill-card">
-        <div class="skill-icon">
-            <img src="Logo/palette-solid-full.svg" alt="Logo" class="skill-logo">
-        </div>
-        <h4>UI/UX Design</h4>
-        <p>Perancangan alur pengguna (wireframe) dan desain antarmuka aplikasi yang intuitif lewat Figma.</p>
-    </div>
-
-</div>         
+                    <div class="skill-card scroll-anim fade-up-anim">
+                        <div class="skill-icon">
+                            <img src="Logo/palette-solid-full.svg" alt="Logo" class="skill-logo">
+                        </div>
+                        <h4>UI/UX Design</h4>
+                        <p>Perancangan alur pengguna (wireframe) dan desain antarmuka aplikasi yang intuitif lewat Figma.</p>
+                    </div>
+                </div>         
+            </div>
         </div>
     </section>
 
-
-
     <!-- PROYEK / KARYA -->
-        <!-- PROYEK / KARYA -->
     <section id="projects">
         <h2>Proyek Saya</h2>
+        <!-- Pembungkus Grid yang Benar -->
         <div class="project-grid">
             
-            <!-- Kartu Proyek 1: Game Ludo Hit -->
-            <div class="project-card">
+            <!-- Kartu Proyek 1 -->
+            <div class="project-card scroll-anim zoom-in-anim">
                 <div class="project-img-wrapper">
                     <img src="Foto/Ludo Hit.avif" alt="Game Ludo Hit" class="project-img">
                 </div>
@@ -157,19 +116,19 @@
                 </div>
             </div>
 
-            <!-- Kartu Proyek 2: Desain UI/UX -->
-            <div class="project-card">
+            <!-- Kartu Proyek 2 -->
+            <div class="project-card scroll-anim zoom-in-anim">
                 <div class="project-img-wrapper">
                     <img src="Foto/DESIGN.jpeg" alt="Desain UI/UX" class="project-img">
                 </div>
                 <div class="project-info-box">
-                    <h3>Desain UI/UX Sistem Aplikasi</h3>
-                    <p>Merancang alur pengguna dan antarmuka aplikasi kasir digital yang simpel dan minimalis.</p>
+                    <h3>UI/UX Sistem Aplikasi Menu Restoran</h3>
+                    <p>Merancang alur pengguna dan antarmuka aplikasi menu digital yang simpel dan minimalis.</p>
                 </div>
             </div>
 
-            <!-- Kartu Proyek 3: System Point of Sale (POS) -->
-            <div class="project-card">
+            <!-- Kartu Proyek 3 -->
+            <div class="project-card scroll-anim zoom-in-anim">
                 <div class="project-img-wrapper">
                     <img src="Foto/Pos.jpg" alt="System POS Kasir" class="project-img">
                 </div>
@@ -178,38 +137,54 @@
                     <p>Membangun sistem Point of Sale (POS) kasir yang terintegrasi dengan manajemen basis data untuk pencatatan transaksi secara riil.</p>
                 </div>
             </div>
+
+        </div>
+    </section>
+
+        <!-- SERTIFIKAT -->
+    <section id="certificates">
+        <h2>Sertifikat Saya</h2>
+        <div class="certificate-grid">
+            
+            <!-- Kartu Sertifikat  -->
+            <div class="certificate-card scroll-anim zoom-in-anim">
+                <div class="cert-img-wrapper">
+                    <!-- Pastikan gambar sertifikat SKD Anda disimpan di folder Foto dengan nama ini -->
+                    <img src="Foto/sertifikat SKD.jpg" alt="Sertifikat SKD" class="cert-img">
+                </div>
+                <div class="cert-info-box">
+                    <h3>Sertifikat Hasil Seleksi Kompetensi Dasar (SKD)</h3>
+                    <p class="cert-issuer">🏷️ Badan Kepegawaian Negara (BKN)</p>
+                    <p class="cert-desc">Sertifikat resmi nilai ujian SKD berbasis CAT yang mengukur kemampuan wawasan kebangsaan, inteligensia umum (logika numerik & analitis), serta karakteristik pribadi.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
 
-        <!-- KONTAK -->
-        <!-- KONTAK -->
-    <section id="contact" class="contact-section">
+    <!-- KONTAK -->
+    <section id="contact" class="scroll-anim fade-up-anim">
         <h2>Kontak</h2>
         <p class="contact-subtitle">Silakan hubungi saya melalui media sosial di bawah atau kirimkan pesan langsung.</p>
         
         <div class="contact-wrapper">
-            <!-- SISI KIRI: Tombol Sosial Media dengan Gambar Logo Lokal -->
             <div class="contact-buttons-box">
                 <h3>Mari Terhubung</h3>
-                
                 <a href="mailto:ramatribayu@gmail.com" class="btn-contact btn-gmail">
                     <img src="Logo/envelope-solid-full.svg" alt="Gmail" class="contact-logo-img"> 
                     <span>ramatribayu@gmail.com</span>
                 </a>
-                
                 <a href="https://instagram.com" target="_blank" class="btn-contact btn-instagram">
-                    <img src="Logo/square-instagram-brands-solid-full.svg" alt="Instagram" class="contact-logo-img"> 
+                    <img src="Logo/palette-solid-full.svg" alt="Instagram" class="contact-logo-img"> 
                     <span>@ramatrbyu.p</span>
                 </a>
-                
                 <a href="https://wa.me" target="_blank" class="btn-contact btn-whatsapp">
-                    <img src="Logo/whatsapp-brands-solid-full.svg" alt="WhatsApp" class="contact-logo-img"> 
-                    <span>+62 857 6272 2180</span>
+                    <img src="Logo/square-web-awesome-brands-solid-full.svg" alt="WhatsApp" class="contact-logo-img"> 
+                    <span>085762722180</span>
                 </a>
             </div>
 
-            <!-- SISI KANAN: Formulir Kirim Pesan -->
             <div class="contact-form-box">
                 <h3>Kirim Pesan</h3>
                 <form action="#" method="POST">
@@ -228,17 +203,30 @@
         </div>
     </section>
 
-
-
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Rama Tribayu Pamungkas. All Rights Reserved.</p>
+        <p>&copy; 2026 RAMA TRIBAYU PAMUNGKAS. All Rights Reserved.</p>
     </footer>
 
-</body>
-</html>
+    <script>
+        // ... (kode menuItems active state Anda biarkan tetap ada) ...
 
-<body>
+        // KODE ANIMASI SCROLL OTOMATIS
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Tambahkan class 'appear' saat elemen mulai terlihat di layar
+                    entry.target.classList.add('appear');
+                }
+            });
+        }, {
+            threshold: 0.15 // Animasi jalan saat 15% elemen sudah masuk ke area layar
+        });
+
+        // Mendaftarkan semua elemen bertanda 'scroll-anim' ke sistem deteksi
+        const animatedElements = document.querySelectorAll('.scroll-anim');
+        animatedElements.forEach((el) => observer.observe(el));
+    </script>
     
 </body>
 </html>

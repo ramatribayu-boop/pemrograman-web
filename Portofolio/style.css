@@ -13,7 +13,6 @@ body {
 }
 
 /* Navigasi / Header */
-/* Navigasi / Header */
 header {
     background-color: #1a252f; /* Mengembalikan ke warna gelap agar logo toska/biru terlihat kontras */
     border-bottom: none;
@@ -67,7 +66,6 @@ nav ul li a:hover {
 
 
 /* --- TATA LETAK BARU HERO SECTION --- */
-/* --- TATA LETAK MODERN HERO SECTION --- */
 .hero {
     background: linear-gradient(135deg, #1e293b, #1abc9c); /* Mengubah sedikit ke slate-dark agar teks lebih menyala */
     color: white;
@@ -326,10 +324,16 @@ h2::after {
 
 /* Bagian Proyek / Karya */
 /* --- TATA LETAK GRID KARTU PROYEK TERBARU --- */
+#projects {
+    padding: 70px 10%;
+    width: 100%;
+}
+
 .project-grid {
     display: grid;
+    /* Membuat kolom otomatis berjejer ke samping jika layar muat, minimal 300px */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    gap: 30px;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -337,11 +341,13 @@ h2::after {
 .project-card {
     background-color: white;
     border-radius: 12px;
-    overflow: hidden; /* Memastikan pojok gambar ikut melengkung sesuai kartu */
+    overflow: hidden; /* KUNCI UTAMA: Memotong semua gambar yang meluap keluar kotak */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    height: 100%; /* Memaksa semua tinggi kartu proyek seragam */
+    border: 1px solid #e2e8f0;
 }
 
 .project-card:hover {
@@ -349,29 +355,33 @@ h2::after {
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* Pembungkus gambar agar tingginya seragam dan konsisten */
+/* Pembungkus gambar proyek agar tingginya terkunci rapi */
 .project-img-wrapper {
     width: 100%;
-    height: 180px; 
+    height: 200px; /* Menentukan tinggi area foto yang pas */
     overflow: hidden;
     background-color: #eaedf0;
+    position: relative;
 }
 
 .project-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Menjaga gambar tetap proporsional tanpa distorsi tegang */
+    object-fit: cover; /* Memastikan foto proporsional dan menutup penuh area bingkai */
+    display: block;
     transition: transform 0.5s ease;
 }
 
 .project-card:hover .project-img {
-    transform: scale(1.05); /* Efek zoom-in halus pada gambar saat kartu di-hover */
+    transform: scale(1.05);
 }
 
-/* Kotak teks di dalam kartu */
+/* Kotak teks penjelasan di bawah gambar */
 .project-info-box {
     padding: 20px;
     text-align: left;
+    background-color: #ffffff;
+    flex-grow: 1; /* Memastikan kotak teks mengisi ruang kosong sisa kartu */
 }
 
 .project-card h3 {
@@ -384,9 +394,8 @@ h2::after {
 .project-card p {
     color: #64748b;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
-
 
 /* Bagian Kontak */
 .contact-info {
@@ -473,6 +482,84 @@ footer {
     height: 45px;           /* Mengatur tinggi logo */
     object-fit: contain;    /* Memastikan gambar logo tidak penyok/terdistorsi */
     margin-bottom: 10px;    /* Jarak antara logo dengan teks judul */
+}
+
+/* ==========================================
+   DESAIN KHUSUS UNTUK 1 SERTIFIKAT (DI TENGAH)
+   ========================================== */
+#certificates {
+    padding: 70px 10%;
+    background-color: #ffffff; /* Menggunakan latar putih agar kontras dengan bagian proyek */
+    width: 100%;
+}
+
+.certificate-grid {
+    display: flex;             /* Mengubah grid menjadi flexbox agar mudah digeser ke tengah */
+    justify-content: center;   /* Membuat kartu otomatis berada tepat di tengah halaman */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.certificate-card {
+    background-color: #f8fafc;
+    border-radius: 12px;
+    overflow: hidden;          /* Memotong pojok gambar agar mengikuti kelengkungan kartu */
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    max-width: 450px;          /* Membatasi lebar maksimal kartu tunggal agar tidak melebar satu layar penuh */
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Bingkai pembungkus gambar sertifikat */
+.cert-img-wrapper {
+    width: 100%;
+    height: 250px;             /* Tinggi area gambar yang pas untuk proporsi piagam */
+    overflow: hidden;
+    background-color: #eaedf0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.cert-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;       /* 'contain' memastikan seluruh gambar sertifikat terlihat utuh tanpa terpotong */
+    background: #ffffff;
+}
+
+/* Kotak teks penjelasan di bawah gambar */
+.cert-info-box {
+    padding: 20px;
+    text-align: left;
+}
+
+.certificate-card h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 6px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.cert-issuer {
+    font-size: 13px;
+    color: #1abc9c;            /* Warna hijau toska sesuai tema navigasi */
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.cert-desc {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
 }
 
 /* --- DESAIN BAGIAN KONTAK TERBARU --- */
@@ -585,3 +672,41 @@ footer {
     background-color: #16a085;
     transform: translateY(-2px);
 }
+
+/* ==========================================
+   SISTEM ANIMASI BERGERAK DAN BERGESER (SCROLL)
+   ========================================== */
+
+/* Kondisi Awal Elemen: Masih Tersembunyi */
+.scroll-anim {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity;
+}
+
+/* 1. Efek Bergeser Naik dari Bawah (Fade Up) */
+.fade-up-anim {
+    transform: translateY(40px); /* Awalnya bergeser ke bawah 40px */
+}
+
+/* 2. Efek Membesar Halus (Zoom In) */
+.zoom-in-anim {
+    transform: scale(0.85); /* Awalnya menciut sedikit */
+}
+
+/* Kondisi Saat Elemen Muncul di Layar Setelah Di-scroll */
+.scroll-anim.appear {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Kembali ke posisi semula secara halus */
+}
+
+/* Memberikan jeda waktu muncul (delay) otomatis pada susunan kartu keahlian */
+.skills-grid .skill-card:nth-child(1) { transition-delay: 0.1s; }
+.skills-grid .skill-card:nth-child(2) { transition-delay: 0.2s; }
+.skills-grid .skill-card:nth-child(3) { transition-delay: 0.3s; }
+.skills-grid .skill-card:nth-child(4) { transition-delay: 0.4s; }
+
+/* Memberikan jeda waktu muncul otomatis pada susunan kartu proyek */
+.project-grid .project-card:nth-child(1) { transition-delay: 0.1s; }
+.project-grid .project-card:nth-child(2) { transition-delay: 0.2s; }
+.project-grid .project-card:nth-child(3) { transition-delay: 0.3s; }
